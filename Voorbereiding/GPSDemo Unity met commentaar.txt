@@ -13,6 +13,10 @@ public enum LocationState
 
 public class GPSManager : MonoBehaviour
 {
+
+    public static int SCREEN_DENSITY; // Totaal aantal pixels op het scherm
+    private GUIStyle debugStyle;
+    const float EARTH_RADIUS = 6371; // Schatting straal van de aarde (in kilometer)
     private LocationState state; //Status van de applicatie
     private float latitude; // Breedtegraad
     private float longitude; // Lengtegraad
@@ -37,8 +41,8 @@ public class GPSManager : MonoBehaviour
         debugStyle.normal.textColor = Color.white;
 
         state = LocationState.Disabled; // Standaard staat applicatie uit
-        latitude = 0f; //Breedtegraad = 0ï¿½
-        longitude = 0f; //Lengtegraad = 0ï¿½
+        latitude = 0f; //Breedtegraad = 0°
+        longitude = 0f; //Lengtegraad = 0°
         distance = 0f; //Nog niet gewandeld
         coins = 0; // Nog geen coins verdiend
 
